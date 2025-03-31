@@ -101,43 +101,43 @@ async function seedRevenue() {
   return insertedRevenue;
 }
 
-// async function dropUsers() {
-//   await sql`
-//     DROP TABLE USERS;
-//   `;
-// }
-// async function dropInvoices() {
-//   await sql`
-//     DROP TABLE INVOICES;
-//   `;
-// }
-// async function dropCustomers() {
-//   await sql`
-//     DROP TABLE CUSTOMERS;
-//   `;
-// }
-// async function dropRevenue() {
-//   await sql`
-//     DROP TABLE REVENUE;
-//   `;
-// }
+async function dropUsers() {
+  await sql`
+    DROP TABLE USERS;
+  `;
+}
+async function dropInvoices() {
+  await sql`
+    DROP TABLE INVOICES;
+  `;
+}
+async function dropCustomers() {
+  await sql`
+    DROP TABLE CUSTOMERS;
+  `;
+}
+async function dropRevenue() {
+  await sql`
+    DROP TABLE REVENUE;
+  `;
+}
 
 
-// export async function GET() {
-//   try {
-//     const result = await sql.begin((sql) => [
-//       seedUsers(),
-//       seedCustomers(),
-//       seedInvoices(),
-//       seedRevenue()
-//       // dropUsers(),
-//       // dropInvoices(),
-//       // dropCustomers(),
-//       // dropRevenue()
-//     ]);
+export async function GET() {
+  try {
+    const result = await sql.begin((sql) => [
+      seedUsers(),
+      seedCustomers(),
+      seedInvoices(),
+      seedRevenue()
+      // dropUsers(),
+      // dropInvoices(),
+      // dropCustomers(),
+      // dropRevenue()
+    ]);
 
-//     return Response.json({ message: 'Database seeded successfully' });
-//   } catch (error) {
-//     return Response.json({ error }, { status: 500 });
-//   }
-// }
+    return Response.json({ message: 'Database seeded successfully' });
+  } catch (error) {
+    return Response.json({ error }, { status: 500 });
+  }
+}
