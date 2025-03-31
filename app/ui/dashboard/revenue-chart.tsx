@@ -11,7 +11,7 @@ import { fetchRevenue } from '@/app/lib/data';
 // https://www.chartjs.org/
 // https://airbnb.io/visx/
 
-export default async function RevenueChartSkeleton()
+export default async function RevenueChart()
 // ({ => props로 받지 않음
 //   revenue,
 // }: {
